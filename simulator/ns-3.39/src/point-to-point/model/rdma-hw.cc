@@ -704,6 +704,8 @@ RdmaHw::ReceiveAck(Ptr<Packet> p, CustomHeader& ch)
     case CC_MODE::POWERQCN:
         HandleAckPowerQcn(qp, p, ch);
         break;
+    case CC_MODE::MLX_CNP:
+        break; // don't abort!
     default:
         NS_ABORT_MSG("Unknown CC mode");
         break;
